@@ -37,6 +37,9 @@ jobs:
                 push: false
                 tag: ${{ vars.DOCKERHUB_USERNAME }}/solar-system:${{ github.sha }}
 
+            - name: List docker images
+              run: docker images
+
             - name: Docker push
               uses: docker/build-push-action@v4
               with:
