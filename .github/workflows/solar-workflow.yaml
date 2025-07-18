@@ -1,0 +1,19 @@
+name: Solar System Workflow
+
+on: push
+
+jobs:
+    unit-testing:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Set-up Node JS - 18
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
+            
+            - name: Install node packages
+              run: npm install
+    
