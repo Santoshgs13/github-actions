@@ -36,3 +36,10 @@ jobs:
                 context: .
                 push: false
                 tag: ${{ vars.DOCKERHUB_USERNAME }}/solar-system:${{ github.sha }}
+
+            - name: Docker push
+              uses: docker/build-push-action@v4
+              with:
+                context: .
+                push: true
+                tag: ${{ vars.DOCKERHUB_USERNAME }}/solar-system:${{ github.sha }}
